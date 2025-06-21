@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Profile Saver",
+  "version": "1.21",
+  "description": "v1.21: fix header size, prevent text selection on drag",
+  "permissions": ["storage","tabs","scripting","webNavigation","downloads"],
+  "host_permissions": ["https://www.linkedin.com/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["https://www.linkedin.com/*"],
+    "js": ["content-script.js"],
+    "css": ["content-style.css"],
+    "run_at": "document_idle"
+  }],
+  "options_page": "options.html"
+}
