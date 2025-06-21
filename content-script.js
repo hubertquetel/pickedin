@@ -93,6 +93,7 @@
   document.getElementById('import_btn').onclick = () => {
     const input = document.createElement('input'); input.type='file'; input.accept='application/json';
     input.onchange = async () => {
+      if (!input.files.length) { alert('Aucun fichier sélectionné'); return; }
       const text = await input.files[0].text();
       try {
         const arr = JSON.parse(text);
