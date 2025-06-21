@@ -20,3 +20,7 @@ This Chrome extension helps you save LinkedIn profile URNs so you can quickly vi
 - Use *Exporter* or *Importer* to save or load your list.
 
 A French version of this file is available in [README.fr.md](README.fr.md).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

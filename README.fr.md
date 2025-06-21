@@ -18,3 +18,7 @@ PickedIn est une extension Chrome permettant d'enregistrer les URN de profils Li
 - Depuis un profil LinkedIn, cliquez sur « Ajouter un profil » pour l'ajouter à votre liste.
 - Utilisez « Voir les articles » pour ouvrir une recherche des publications des profils sauvegardés.
 - Les boutons « Exporter » et « Importer » servent à sauvegarder ou restaurer la liste.
+
+## Licence
+
+Ce projet est distribué sous la [licence MIT](LICENSE).
