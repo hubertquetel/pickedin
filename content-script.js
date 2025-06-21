@@ -59,9 +59,15 @@
     list.forEach((p, i) => {
       const div = document.createElement('div'); div.className='myl_item';
       const span = document.createElement('span'); span.textContent=`${i+1}. ${p.name||p.urn}`;
+      const link = document.createElement('button'); link.className='posts_btn';
+      link.textContent='🔗'; link.title='Voir les articles';
+      link.onclick = () => {
+        const id=p.urn.replace(/^urn:li:fs_profile:/,'');
+        window.open(`https://www.linkedin.com/search/results/content/?fromMember=%5B%22${id}%22%5D&origin=FACETED_SEARCH&sortBy=%22date_posted%22`,'_blank');
+      };
       const del = document.createElement('button'); del.className='delete_btn'; del.textContent='×';
       del.onclick = async () => { const arr=(await getProfiles()).filter(x=>x.urn!==p.urn); await saveProfiles(arr); render(); };
-      div.append(span, del); container.appendChild(div);
+      div.append(span, link, del); container.appendChild(div);
     });
   };
 
