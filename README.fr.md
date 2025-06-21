@@ -19,6 +19,14 @@ PickedIn est une extension Chrome permettant d'enregistrer les URN de profils Li
 - Utilisez « Voir les articles » pour ouvrir une recherche des publications des profils sauvegardés.
 - Les boutons « Exporter » et « Importer » servent à sauvegarder ou restaurer la liste.
 
+## Exécution des tests
+Les tests unitaires nécessitent seulement Node.js et exécutent le script `test/onInstalled.test.js`.
+Lancez :
+
+```
+npm test
+```
+
 ## Licence
 
 Ce projet est distribué sous la [licence MIT](LICENSE).

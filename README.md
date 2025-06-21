@@ -19,6 +19,14 @@ This Chrome extension helps you save LinkedIn profile URNs so you can quickly vi
 - Use *Voir les articles* to open a search of posts from all saved profiles.
 - Use *Exporter* or *Importer* to save or load your list.
 
+## Running tests
+The unit tests require Node.js only and run the script in `test/onInstalled.test.js`.
+Execute:
+
+```
+npm test
+```
+
 A French version of this file is available in [README.fr.md](README.fr.md).
 
 ## License
