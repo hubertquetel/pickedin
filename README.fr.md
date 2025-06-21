@@ -6,6 +6,7 @@ PickedIn est une extension Chrome permettant d'enregistrer les URN de profils Li
 - Bouton flottant « pIn » sur les pages LinkedIn pour ouvrir le panneau.
 - **Ajouter un profil :** enregistre le profil courant (jusqu'à 50 éléments).
 - **Voir les articles :** ouvre une recherche LinkedIn pour afficher les publications des profils enregistrés.
+- Un bouton-lien à côté de chaque profil ouvre ses articles individuellement.
 - **Importer/Exporter :** sauvegarde ou restauration de la liste au format JSON.
 - Page d'options pour renseigner la clé API et l'identifiant de base Airtable.
 
