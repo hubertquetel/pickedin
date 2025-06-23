@@ -15,14 +15,14 @@
   panel.innerHTML = `
     <header>PickedIn</header>
     <div id="controls">
-      <button id="add_btn">Ajouter un profil</button>
-      <button id="view_btn">Voir les articles</button>
+      <button id="add_btn" aria-label="Ajouter le profil courant">Ajouter un profil</button>
+      <button id="view_btn" aria-label="Ouvrir les articles des profils">Voir les articles</button>
     </div>
     <div id="myl_count">0 / 50</div>
     <div id="myl_list"></div>
     <div id="import_export">
-      <button id="import_btn">Importer</button>
-      <button id="export_btn">Exporter</button>
+      <button id="import_btn" aria-label="Importer la liste">Importer</button>
+      <button id="export_btn" aria-label="Exporter la liste">Exporter</button>
     </div>`;
   document.body.appendChild(panel);
 
@@ -65,11 +65,13 @@
       span.textContent = `${i + 1}. ${p.name || p.urn} `;
       const link = document.createElement('button'); link.className='posts_btn';
       link.textContent='↗'; link.title='Voir les articles';
+      link.setAttribute('aria-label', 'Ouvrir les articles de ce profil');
       link.onclick = () => {
         const id=p.urn.replace(/^urn:li:fs_profile:/,'');
         window.open(`https://www.linkedin.com/search/results/content/?fromMember=%5B%22${id}%22%5D&origin=FACETED_SEARCH&sortBy=%22date_posted%22`,'_blank');
       };
       const del = document.createElement('button'); del.className='delete_btn'; del.textContent='×';
+      del.setAttribute('aria-label', 'Supprimer ce profil');
       del.onclick = async () => { const arr=(await getProfiles()).filter(x=>x.urn!==p.urn); await saveProfiles(arr); render(); };
       div.append(span, link, del); container.appendChild(div);
     });
