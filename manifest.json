@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "LinkedIn Profile Saver",
-  "version": "1.22",
-  "description": "v1.22: individual posts links",
+  "version": "1.23",
+  "description": "v1.23: individual posts links",
   "permissions": ["storage","tabs","scripting","webNavigation","downloads"],
   "host_permissions": ["https://www.linkedin.com/*"],
   "background": { "service_worker": "background.js" },
