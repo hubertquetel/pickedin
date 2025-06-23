@@ -26,7 +26,9 @@
   position: fixed; top: 0; right: -360px; width: 360px; height: 100%;
   background: #fff; box-shadow: -2px 0 5px rgba(0,0,0,0.2);
   transition: right 0.3s ease; display: flex; flex-direction: column;
-  padding: 12px; z-index: 9999;
+  padding: 16px;
+  box-sizing: border-box;
+  z-index: 9999;
 }
 /* Panel open */
 #myl_panel.open { right: 0; }
@@ -77,6 +79,7 @@
   font-size: 16px;
   cursor: pointer;
   padding: 0;
+  margin-left: 4px;
 }
 /* Import/Export */
 #import_export { display: flex; gap: 5px; margin-top: auto; }
