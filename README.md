@@ -6,6 +6,7 @@ This Chrome extension helps you save LinkedIn profile URNs so you can quickly vi
 - Floating "pIn" button on LinkedIn pages to open the panel.
 - **Add profile:** save the current profile (up to 50 entries).
 - **View posts:** open a LinkedIn search for the saved profiles' posts.
+- A small "↗" arrow right after each profile name opens posts for that profile only.
 - **Import/Export:** backup or restore your saved list as JSON.
 - Options page to store an Airtable API key and base ID.
 

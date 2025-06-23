@@ -6,6 +6,7 @@
 
   // UI
   const btn = document.createElement('div'); btn.id = 'myl_btn';
+  btn.style.transition = 'top 0.2s ease-out';
   const handle = document.createElement('div'); handle.id = 'myl_handle';
   const label = document.createElement('div'); label.className = 'label'; label.textContent = 'pIn';
   btn.append(handle, label); document.body.appendChild(btn);
@@ -28,6 +29,7 @@
   // Drag on handle
   handle.addEventListener('mousedown', e => {
     e.preventDefault();
+    btn.style.transition = 'none';
     let startY = e.clientY, origTop = parseFloat(btn.style.top) || 0;
     const onMove = ev => {
       let newTop = origTop + (ev.clientY - startY);
@@ -38,6 +40,7 @@
       document.removeEventListener('mousemove', onMove);
       document.removeEventListener('mouseup', onUp);
       handle.style.cursor = 'grab';
+      btn.style.transition = 'top 0.2s ease-out';
     };
     handle.style.cursor = 'grabbing';
     document.addEventListener('mousemove', onMove);
@@ -58,10 +61,17 @@
     const container = document.getElementById('myl_list'); container.innerHTML = '';
     list.forEach((p, i) => {
       const div = document.createElement('div'); div.className='myl_item';
-      const span = document.createElement('span'); span.textContent=`${i+1}. ${p.name||p.urn}`;
+      const span = document.createElement('span');
+      span.textContent = `${i + 1}. ${p.name || p.urn} `;
+      const link = document.createElement('button'); link.className='posts_btn';
+      link.textContent='↗'; link.title='Voir les articles';
+      link.onclick = () => {
+        const id=p.urn.replace(/^urn:li:fs_profile:/,'');
+        window.open(`https://www.linkedin.com/search/results/content/?fromMember=%5B%22${id}%22%5D&origin=FACETED_SEARCH&sortBy=%22date_posted%22`,'_blank');
+      };
       const del = document.createElement('button'); del.className='delete_btn'; del.textContent='×';
       del.onclick = async () => { const arr=(await getProfiles()).filter(x=>x.urn!==p.urn); await saveProfiles(arr); render(); };
-      div.append(span, del); container.appendChild(div);
+      div.append(span, link, del); container.appendChild(div);
     });
   };
 
